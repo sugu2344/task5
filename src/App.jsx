@@ -1,8 +1,21 @@
+import Cart from "./components/cart";
+import Footer from "./components/footer";
+import LandingPage from "./components/landingpage";
+import NavBar from "./components/navbar";
+
 const App = () => {
   return (
     <>
-      <h1>React Tailwind</h1>
-      <p>React Tailwind</p>
+      <div>
+        <NavBar />
+        <Cart />
+      </div>
+      <div>
+        <LandingPage />
+      </div>
+      <div>
+        <Footer />
+      </div>
     </>
   );
 };
