@@ -1,13 +1,15 @@
 const LandingPage = () => {
   return (
     <>
-      <div className="bg-[#F5F7DC] m-5 p-5 flex flex-row space-y-3 space-x-3">
-        <div className="w-[20%] px-3 py-2 border-2 bg-white">
-          <img src="https://placehold.co/450x300"></img>
-          <div className="text-center space-y-3">
+      <div className="flex flex-wrap gap-4 p-5 bg-[#EFF7F6]">
+        <div className="w-full sm:w-[45%] md:w-[30%] lg:w-[23%] border-2 bg-white p-4">
+          <img src="https://placehold.co/450x300" alt="Product" />
+          <div className="text-center space-y-3 mt-3">
             <h1 className="font-bold text-2xl">Product-Title</h1>
-            <p> product-Price</p>
-            <p>Title</p>
+            <p>Product-Price</p>
+            <button className="border-2 p-2 rounded-xl hover:bg-black hover:text-white">
+              Add to Cart
+            </button>
           </div>
         </div>
       </div>
