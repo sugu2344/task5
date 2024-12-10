@@ -1,16 +1,9 @@
-import { useState } from "react";
-
-const Cart = () => {
-  const [cart, setcart] = useState(0);
+const Cart = ({ cart }) => {
   return (
-    <>
-      <div>
-        <span className="material-symbols-outlined text-3xl">
-          shopping_cart
-        </span>
-        <span>{cart}</span>
-      </div>
-    </>
+    <div className="flex items-center gap-2">
+      <span className="material-symbols-outlined text-3xl">shopping_cart</span>
+      <span className="text-xl font-bold">{cart}</span>
+    </div>
   );
 };
 

@@ -1,22 +1,18 @@
 import { useEffect, useState } from "react";
 
-const LandingPage = () => {
+const LandingPage = ({ setCart }) => {
   const [post, setPost] = useState([]);
-
-  useEffect(() => {
-    console.log(post);
-  }, [post]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
-      .then((data) => {
-        setPost(data);
-      })
-      .catch((error) => {
-        console.log("Error in fetching post", error);
-      });
+      .then((data) => setPost(data))
+      .catch((error) => console.log("Error in fetching posts:", error));
   }, []);
+
+  const handleAddToCart = () => {
+    setCart((prevCart) => prevCart + 1);
+  };
 
   return (
     <div className="flex flex-wrap gap-4 p-5 bg-[#EFF7F6]">
@@ -33,7 +29,10 @@ const LandingPage = () => {
           <div className="text-center space-y-3 mt-3">
             <h1 className="font-bold text-2xl">{item.title}</h1>
             <p className="text-lg font-medium">${item.price}</p>
-            <button className="border-2 p-2 rounded-xl hover:bg-black hover:text-white">
+            <button
+              onClick={handleAddToCart}
+              className="border-2 p-2 rounded-xl hover:bg-black hover:text-white"
+            >
               Add to Cart
             </button>
           </div>
