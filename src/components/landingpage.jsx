@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const LandingPage = ({ setCart }) => {
+const LandingPage = ({ setCart, setShowModal }) => {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
@@ -12,6 +12,7 @@ const LandingPage = ({ setCart }) => {
 
   const handleAddToCart = () => {
     setCart((prevCart) => prevCart + 1);
+    setShowModal(true);
   };
 
   return (
@@ -31,7 +32,7 @@ const LandingPage = ({ setCart }) => {
             <p className="text-lg font-medium">${item.price}</p>
             <button
               onClick={handleAddToCart}
-              className="border-2 p-2 rounded-xl hover:bg-black hover:text-white"
+              className="border-2 p-2 rounded-xl hover:bg-black hover:text-white cursor-pointer"
             >
               Add to Cart
             </button>
