@@ -16,6 +16,10 @@ const NavBar = () => {
     }
   };
 
+  const removeFromCart = (id) => {
+    setCartItems(cartItems.filter((item) => item.id !== id));
+  };
+
   return (
     <>
       <div className="flex justify-between bg-[#D8CBC7] pt-3 pr-12 pb-3 pl-8 items-center">
@@ -23,7 +27,13 @@ const NavBar = () => {
         <Cart cartItems={cartItems} setShowModal={setShowModal} />
       </div>
       <LandingPage addToCart={addToCart} />
-      {showModal && <Model setShowModal={setShowModal} cartItems={cartItems} />}
+      {showModal && (
+        <Model
+          setShowModal={setShowModal}
+          cartItems={cartItems}
+          removeFromCart={removeFromCart}
+        />
+      )}
     </>
   );
 };

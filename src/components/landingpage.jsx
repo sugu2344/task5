@@ -7,7 +7,7 @@ const LandingPage = ({ addToCart }) => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((data) => setPost(data))
-      .catch((error) => console.log("Error in fetching posts:", error));
+      .catch((error) => console.log("Error in fetching:", error));
   }, []);
 
   const handleAddToCart = (item) => {
