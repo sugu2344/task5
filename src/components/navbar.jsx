@@ -1,4 +1,4 @@
-import Cart from "./Cart";
+import Cart from "./cart";
 import LandingPage from "./landingpage";
 import { useState } from "react";
 import Model from "./model";
