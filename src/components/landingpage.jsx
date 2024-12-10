@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const LandingPage = ({ setCart, setShowModal }) => {
+const LandingPage = ({ addToCart }) => {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
@@ -10,8 +10,8 @@ const LandingPage = ({ setCart, setShowModal }) => {
       .catch((error) => console.log("Error in fetching posts:", error));
   }, []);
 
-  const handleAddToCart = () => {
-    setCart((prevCart) => prevCart + 1);
+  const handleAddToCart = (item) => {
+    addToCart(item);
   };
 
   return (
@@ -30,7 +30,7 @@ const LandingPage = ({ setCart, setShowModal }) => {
             <h1 className="font-bold text-2xl">{item.title}</h1>
             <p className="text-lg font-medium">${item.price}</p>
             <button
-              onClick={handleAddToCart}
+              onClick={() => handleAddToCart(item)} 
               className="border-2 p-2 rounded-xl hover:bg-black hover:text-white cursor-pointer"
             >
               Add to Cart
