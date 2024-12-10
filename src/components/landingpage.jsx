@@ -30,7 +30,7 @@ const LandingPage = ({ addToCart }) => {
             <h1 className="font-bold text-2xl">{item.title}</h1>
             <p className="text-lg font-medium">${item.price}</p>
             <button
-              onClick={() => handleAddToCart(item)} 
+              onClick={() => handleAddToCart(item)}
               className="border-2 p-2 rounded-xl hover:bg-black hover:text-white cursor-pointer"
             >
               Add to Cart

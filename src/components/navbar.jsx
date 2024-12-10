@@ -8,7 +8,12 @@ const NavBar = () => {
   const [showModal, setShowModal] = useState(false);
 
   const addToCart = (item) => {
-    setCartItems((prevItems) => [...prevItems, item]);
+    const isItemInCart = cartItems.some((cartItem) => cartItem.id === item.id);
+    if (isItemInCart) {
+      alert("This item is already added to the cart.");
+    } else {
+      setCartItems((prevItems) => [...prevItems, item]);
+    }
   };
 
   return (
