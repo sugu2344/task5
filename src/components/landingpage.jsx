@@ -12,7 +12,6 @@ const LandingPage = ({ setCart, setShowModal }) => {
 
   const handleAddToCart = () => {
     setCart((prevCart) => prevCart + 1);
-    setShowModal(true);
   };
 
   return (
