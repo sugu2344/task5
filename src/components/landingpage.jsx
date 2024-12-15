@@ -28,6 +28,7 @@ const LandingPage = ({ addToCart }) => {
           />
           <div className="flex flex-col justify-between flex-grow text-center space-y-3 mt-3">
             <h1 className="font-bold text-2xl">{item.title}</h1>
+            <p>{item.description}</p>
             <p className="text-lg font-medium">₹{item.price}</p>
             <button
               onClick={() => handleAddToCart(item)}
